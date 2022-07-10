@@ -1,0 +1,13 @@
+.container-fluid{
+    width: 100%;
+    display: flex;
+}
+
+.create-task{
+    flex-grow: 0.2;
+}
+
+.tasks{
+    flex-grow: 1;
+    margin-left: 1em;
+}

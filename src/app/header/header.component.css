@@ -1,0 +1,13 @@
+
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+h2{
+    color: #e53935;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

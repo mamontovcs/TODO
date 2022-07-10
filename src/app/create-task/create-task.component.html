@@ -1,0 +1,26 @@
+<div class="create-form">
+<form class="text-center border border-light p-5" action="#!">
+
+    <p class="h4 mb-4">Create task</p>
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- Task name -->
+            <input type="text"class="form-control" placeholder="Name">
+        </div>
+        <hr>    
+        <div class="col" >
+            <!-- Select task status -->
+            <select class="form-select" [(ngModel)]="selectedStatus" name="selectStatus">
+                    <option *ngFor="let status of taskStatuses">{{status}}</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Notes -->
+    <textarea class="form-control" rows="6" placeholder="Notes"></textarea>
+
+    <button class="btn btn-info my-4 btn-block" type="submit">Create</button>
+
+</form>
+</div>
