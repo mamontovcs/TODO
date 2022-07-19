@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { FormsModule } from '@angular/forms';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskItemComponent } from './task-list/task-item/task-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    TaskListComponent,
+    TaskItemComponent
   ],
   imports: [
     BrowserModule,

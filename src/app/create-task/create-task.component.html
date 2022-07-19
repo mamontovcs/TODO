@@ -6,7 +6,7 @@
     <div class="form-row mb-4">
         <div class="col">
             <!-- Task name -->
-            <input type="text"class="form-control" placeholder="Name">
+            <input type="text"class="form-control" [(ngModel)]="taskName" name="taskName" placeholder="Name">
         </div>
         <hr>    
         <div class="col" >
@@ -18,9 +18,9 @@
     </div>
 
     <!-- Notes -->
-    <textarea class="form-control" rows="6" placeholder="Notes"></textarea>
+    <textarea class="form-control" [(ngModel)]="taskNotes" name="taskNotes" rows="6" placeholder="Notes"></textarea>
 
-    <button class="btn btn-info my-4 btn-block" type="submit">Create</button>
-
+     <!-- Create -->
+    <button class="btn btn-info my-4 btn-block" type="submit" (click)="onTaskCreate()">Create</button>
 </form>
 </div>
