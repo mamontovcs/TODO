@@ -1,0 +1,6 @@
+<div class="col" >
+    <!-- Select task status -->
+    <select class="form-select" name="selectedStatus" [(ngModel)]="selectedStatus" (change)="onChanged()">
+            <option *ngFor="let status of taskStatuses">{{status}}</option>
+    </select>
+</div>

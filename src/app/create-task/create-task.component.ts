@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { TaskService } from '../infrastructure/services/task.service';
+import { SelectStatusComponent } from '../shared/select-status/select-status.component';
 
 @Component({
   selector: 'app-create-task',
@@ -7,11 +8,12 @@ import { TaskService } from '../infrastructure/services/task.service';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
-  taskStatuses: string[] = ['To do', 'In progress', 'Canceled', 'Done'];
-  selectedStatus: string = this.taskStatuses[0];
 
   taskName: string = '';
   taskNotes: string = '';
+  taskStatus: string = '';
+
+  @ViewChild(SelectStatusComponent) selectStatusComponent!: SelectStatusComponent;
 
   constructor(private taskService: TaskService) { }
 
@@ -19,16 +21,20 @@ export class CreateTaskComponent implements OnInit {
   }
 
   onTaskCreate(){
-    this.taskService.addTask(this.taskName, this.selectedStatus, this.taskNotes);
+    this.taskService.addTask(this.taskName, this.taskStatus, this.taskNotes);
     this.ClearData();
     
     console.log(this.taskService.getTasks());
   }
 
-  private ClearData(){
-    this.taskName = '';
-    this.selectedStatus = this.taskStatuses[0];
-    this.taskNotes = '';
+  onStatusChange(eventData: {selectedStatus: string}){
+    this.taskStatus = eventData.selectedStatus;
   }
 
+  private ClearData(){
+    this.selectStatusComponent.setStatusToDefault();
+    this.taskName = '';
+    this.taskStatus = '';
+    this.taskNotes = '';
+  }
 }

@@ -7,6 +7,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { FormsModule } from '@angular/forms';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskItemComponent } from './task-list/task-item/task-item.component';
+import { SelectStatusComponent } from './shared/select-status/select-status.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TaskItemComponent } from './task-list/task-item/task-item.component';
     HeaderComponent,
     CreateTaskComponent,
     TaskListComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    SelectStatusComponent
   ],
   imports: [
     BrowserModule,

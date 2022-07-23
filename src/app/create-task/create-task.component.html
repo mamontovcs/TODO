@@ -9,12 +9,7 @@
             <input type="text"class="form-control" [(ngModel)]="taskName" name="taskName" placeholder="Name">
         </div>
         <hr>    
-        <div class="col" >
-            <!-- Select task status -->
-            <select class="form-select" [(ngModel)]="selectedStatus" name="selectStatus">
-                    <option *ngFor="let status of taskStatuses">{{status}}</option>
-            </select>
-        </div>
+        <app-select-status (statusChanged)="onStatusChange($event)"></app-select-status>
     </div>
 
     <!-- Notes -->
